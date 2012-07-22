@@ -23,20 +23,5 @@ public class HomeActivity extends AbstractActivity implements HomeView.Presenter
 		view.setEnabled(true);
 		panel.setWidget(view);
 	}
-
-	@Override
-	public void sendNameToServer(String name) {
-		// First, we validate the input.
-		view.setError("");
-		if (!FieldVerifier.isValidName(name)) {
-			view.setError("Please enter at least four characters");
-			return;
-		}
-
-		// Then, we send the input to the server.
-		view.setEnabled(false);
-
-		placeController.goTo(new GreetingPlace(name));
-	}
 }
 

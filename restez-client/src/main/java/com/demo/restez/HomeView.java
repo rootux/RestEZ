@@ -8,7 +8,6 @@ public interface HomeView extends IsWidget {
 
 	public interface Presenter {
 
-		void sendNameToServer(String name);
 	}
 
 	void setEnabled(boolean enabled);

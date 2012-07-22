@@ -13,8 +13,6 @@ public class MainActivityMapper implements ActivityMapper {
 
 	public interface Factory {
 		HomeActivity homeActivity();
-
-		GreetingActivity greetingActivity(String user);
 	}
 
 	private final Factory factory;
@@ -28,10 +26,6 @@ public class MainActivityMapper implements ActivityMapper {
 	public Activity getActivity(Place place) {
 		if (place instanceof HomePlace) {
 			return factory.homeActivity();
-		}
-		if (place instanceof GreetingPlace) {
-			GreetingPlace greetingPlace = (GreetingPlace) place;
-			return factory.greetingActivity(greetingPlace.getUser());
 		}
 		logger.severe("Unhandled place type: " + place.getClass().getName());
 		return null;

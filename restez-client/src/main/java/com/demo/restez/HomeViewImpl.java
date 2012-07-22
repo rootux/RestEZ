@@ -25,18 +25,12 @@ public class HomeViewImpl implements HomeView {
 
 	private Presenter presenter;
 
-	@UiField TextBox nameField;
-	@UiField Button  sendButton;
-	@UiField Label   errorLabel;
-
 	@Override
 	public void setEnabled(boolean enabled) {
-		sendButton.setEnabled(enabled);
 	}
 
 	@Override
 	public void setError(String error) {
-		errorLabel.setText(error);
 	}
 
 	@Override
@@ -47,24 +41,6 @@ public class HomeViewImpl implements HomeView {
 	@Override
 	public Widget asWidget() {
 		return w;
-	}
-
-	@UiHandler("sendButton")
-	void onClick(ClickEvent event) {
-		sendNameToServer();
-	}
-
-	@UiHandler("nameField")
-	void onKeyUp(KeyUpEvent event) {
-		if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
-			sendNameToServer();
-		}
-	}
-
-	private void sendNameToServer() {
-		if (presenter != null) {
-			presenter.sendNameToServer(nameField.getText());
-		}
 	}
 }
 

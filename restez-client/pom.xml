@@ -1,138 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>com.demo.restez</groupId>
-    <artifactId>restez</artifactId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
+	<parent>
+		<groupId>com.demo.restez</groupId>
+		<artifactId>restez</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 
-  <artifactId>restez-client</artifactId>
-  <packaging>war</packaging>
+	<artifactId>restez-client</artifactId>
+	<packaging>war</packaging>
 
-  <prerequisites>
-    <maven>${mavenVersion}</maven>
-  </prerequisites>
+	<prerequisites>
+		<maven>${mavenVersion}</maven>
+	</prerequisites>
 
-  <properties>
-    <gwt.module>com.demo.restez.App</gwt.module>
-    <gwt.draftCompile>false</gwt.draftCompile>
-    <gwt.style>OBF</gwt.style>
-    <!-- keep in sync with restez-server -->
-    <runTarget>http://localhost:8080/</runTarget>
-  </properties>
+	<properties>
+		<gwt.module>com.demo.restez.App</gwt.module>
+		<gwt.draftCompile>false</gwt.draftCompile>
+		<gwt.style>OBF</gwt.style>
+		<!-- keep in sync with restez-server -->
+		<runTarget>http://localhost:8080/</runTarget>
+	</properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>restez-shared</artifactId>
-      <version>${project.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>restez-shared</artifactId>
-      <version>${project.version}</version>
-      <classifier>sources</classifier>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.gwt</groupId>
-      <artifactId>gwt-user</artifactId>
-    </dependency>
-    <dependency>
-      <!-- FIXME: used to pull in RF dependencies; should no longer be necessary with GWT 2.5 onwards -->
-      <groupId>com.google.web.bindery</groupId>
-      <artifactId>requestfactory-client</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.inject</groupId>
-      <artifactId>guice</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.gwt.inject</groupId>
-      <artifactId>gin</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava-gwt</artifactId>
-    </dependency>
-  </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>restez-shared</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>restez-shared</artifactId>
+			<version>${project.version}</version>
+			<classifier>sources</classifier>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+		</dependency>
+		<dependency>
+			<!-- FIXME: used to pull in RF dependencies; should no longer be necessary 
+				with GWT 2.5 onwards -->
+			<groupId>com.google.web.bindery</groupId>
+			<artifactId>requestfactory-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt.inject</groupId>
+			<artifactId>gin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava-gwt</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.gwtbootstrap</groupId>
+			<artifactId>gwt-bootstrap</artifactId>
+			<version>2.0.4.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>gwt-maven-plugin</artifactId>
-        <configuration>
-          <module>${gwt.module}</module>
-          <strict>true</strict>
-          <draftCompile>${gwt.draftCompile}</draftCompile>
-          <style>${gwt.style}</style>
-          <noserver>true</noserver>
-          <runTarget>${runTarget}</runTarget>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <configuration>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
-          <packagingExcludes>WEB-INF/**</packagingExcludes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+	<repositories>
+		<repository>
+			<id>gwt-bootstrap</id>
+			<name>GWT-Bootstrap SNAPSHOTS</name>
+			<url>http://gwtbootstrap.github.com/maven/snapshots</url>
+		</repository>
+	</repositories>
 
-  <profiles>
-    <profile>
-      <id>draft</id>
-      <activation>
-        <property>
-          <name>draft</name>
-        </property>
-      </activation>
-      <properties>
-        <gwt.module>com.demo.restez.App_dev</gwt.module>
-        <gwt.draftCompile>true</gwt.draftCompile>
-        <gwt.style>PRETTY</gwt.style>
-      </properties>
-    </profile>
-    <profile>
-      <id>dev</id>
-      <activation>
-        <property>
-          <name>dev</name>
-        </property>
-      </activation>
-      <build>
-        <!-- FIXME: workaround for MGWT-332 -->
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>build-helper-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>add-shared-sources-to-classpath</id>
-                <!-- After 'process-resources' so they're not copied to ${project.build.outputDirectory} -->
-                <!-- But before 'compile' to make them available to 'gwt:run' -->
-                <phase>compile</phase>
-                <goals>
-                  <goal>add-resource</goal>
-                </goals>
-                <configuration>
-                  <resources>
-                    <!-- Only sources, resources are already in the classpath, by definition -->
-                    <resource>
-                      <directory>${basedir}/../restez-shared/src/main/java</directory>
-                    </resource>
-                  </resources>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<configuration>
+					<module>${gwt.module}</module>
+					<strict>true</strict>
+					<draftCompile>${gwt.draftCompile}</draftCompile>
+					<style>${gwt.style}</style>
+					<noserver>true</noserver>
+					<runTarget>${runTarget}</runTarget>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<packagingExcludes>WEB-INF/**</packagingExcludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>draft</id>
+			<activation>
+				<property>
+					<name>draft</name>
+				</property>
+			</activation>
+			<properties>
+				<gwt.module>com.demo.restez.App_dev</gwt.module>
+				<gwt.draftCompile>true</gwt.draftCompile>
+				<gwt.style>PRETTY</gwt.style>
+			</properties>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<property>
+					<name>dev</name>
+				</property>
+			</activation>
+			<build>
+				<!-- FIXME: workaround for MGWT-332 -->
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>build-helper-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>add-shared-sources-to-classpath</id>
+								<!-- After 'process-resources' so they're not copied to ${project.build.outputDirectory} -->
+								<!-- But before 'compile' to make them available to 'gwt:run' -->
+								<phase>compile</phase>
+								<goals>
+									<goal>add-resource</goal>
+								</goals>
+								<configuration>
+									<resources>
+										<!-- Only sources, resources are already in the classpath, by definition -->
+										<resource>
+											<directory>${basedir}/../restez-shared/src/main/java</directory>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
