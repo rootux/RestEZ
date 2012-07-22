@@ -1,0 +1,14 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+		<g:HorizontalPanel>
+			<gwtbootstrap:Button type="DANGER" text="Low" ui:field="lowBtn" />
+			<gwtbootstrap:Button type="WARNING" text="Medium" ui:field="medBtn" />
+			<gwtbootstrap:Button type="SUCCESS" text="High" ui:field="highBtn" />
+		</g:HorizontalPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 
