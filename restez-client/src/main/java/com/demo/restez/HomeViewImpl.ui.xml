@@ -1,7 +1,7 @@
-<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:f="urn:import:com.demo.restez.widgets.filter">
 
   <g:HTMLPanel>
-    AVI NIMNI 8
+    	<f:DefaultFilterWidget />
   </g:HTMLPanel>
 </ui:UiBinder>
 

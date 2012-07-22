@@ -1,0 +1,63 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui" xmlns:a="urn:import:com.demo.restez.widgets.avgprice" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui.base">
+	<ui:style>
+		.list{
+			list-style-type: none;
+		}
+		.list li{
+			margin: 5px;	
+		}
+		.list li span{
+			margin-right: 3px;	
+		}
+		.priceSelector{
+			display: inline;			
+		}
+	</ui:style>
+	<g:HTMLPanel>
+		<gwtbootstrap:Row>
+			<gwtbootstrap:Column size="6">
+				<b:InlineLabel>Name</b:InlineLabel>
+			</gwtbootstrap:Column>
+			<gwtbootstrap:Column size="6">
+				<gwtbootstrap:TextBox ui:field="nameTextBox" placeholder="Name" />
+			</gwtbootstrap:Column>			
+		</gwtbootstrap:Row>
+		<gwtbootstrap:Row>
+			<gwtbootstrap:Column size="6">
+				<b:InlineLabel>Description</b:InlineLabel>
+			</gwtbootstrap:Column>
+			<gwtbootstrap:Column size="6">
+				<gwtbootstrap:TextBox ui:field="descTextBox" placeholder="Description" />
+			</gwtbootstrap:Column>			
+		</gwtbootstrap:Row>
+		<gwtbootstrap:Row>
+			<gwtbootstrap:Column size="6">
+				<b:InlineLabel>Address</b:InlineLabel>
+			</gwtbootstrap:Column>
+			<gwtbootstrap:Column size="6">
+				<gwtbootstrap:TextBox ui:field="addrTextBox" placeholder="Address" />
+			</gwtbootstrap:Column>			
+		</gwtbootstrap:Row>	
+		<gwtbootstrap:Row>
+			<gwtbootstrap:Column size="4">
+				<gwtbootstrap:CheckBox ui:field="kosherCb" text="Kosher"/>
+			</gwtbootstrap:Column>
+			<gwtbootstrap:Column size="4">
+				<gwtbootstrap:CheckBox ui:field="fancyCb" text="Fancy" />
+			</gwtbootstrap:Column>
+			<gwtbootstrap:Column size="4">
+				<gwtbootstrap:CheckBox ui:field="takeAwayCb" text="Take Away"/>
+			</gwtbootstrap:Column>							
+		</gwtbootstrap:Row>
+		<gwtbootstrap:Row>
+			<gwtbootstrap:Column size="6">
+				<b:InlineLabel>Average Price</b:InlineLabel>
+			</gwtbootstrap:Column>
+			<gwtbootstrap:Column size="6">
+				<a:DefaultAveragePriceSelector ui:field="avgSelector" styleName="{style.priceSelector}"/>
+			</gwtbootstrap:Column>			
+		</gwtbootstrap:Row>								
+	</g:HTMLPanel>
+</ui:UiBinder> 
