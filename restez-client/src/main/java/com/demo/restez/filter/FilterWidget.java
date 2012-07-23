@@ -13,6 +13,8 @@ public interface FilterWidget extends Editor<RestaurantProxy>, IsWidget
 		void start(EventBus eventBus);
 
 		void filterChanged();
+
+		void resetFilter();
 	}
 	
 	void setPresenter(Presenter presenter);

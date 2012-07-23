@@ -37,5 +37,11 @@ public class FilterWidgetPresenter implements FilterWidget.Presenter
 		widget.getEditorDriver().flush();
 	    eventBus.fireEvent(new FilterChangedEvent(filter));
     }
+
+	@Override
+    public void resetFilter()
+    {
+		eventBus.fireEvent(new FilterChangedEvent(null));
+    }
 	
 }
