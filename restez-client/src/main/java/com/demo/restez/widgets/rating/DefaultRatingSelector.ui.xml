@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+		<b:Row>
+			<b:Column size="1" offset="0">
+				<g:FocusPanel ui:field="star1Panel"><b:Icon type="STAR_EMPTY" iconSize="LARGE" ui:field="star1"/></g:FocusPanel>
+			</b:Column>
+			<b:Column size="1" offset="0">
+				<g:FocusPanel ui:field="star2Panel"><b:Icon type="STAR_EMPTY" iconSize="LARGE" ui:field="star2"/></g:FocusPanel>
+			</b:Column>
+			<b:Column size="1" offset="0">
+				<g:FocusPanel ui:field="star3Panel"><b:Icon type="STAR_EMPTY" iconSize="LARGE" ui:field="star3"/></g:FocusPanel>
+			</b:Column>						
+		</b:Row>
+	</g:HTMLPanel>
+</ui:UiBinder> 
