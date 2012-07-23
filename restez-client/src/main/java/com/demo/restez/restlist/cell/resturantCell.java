@@ -72,7 +72,7 @@ public class resturantCell extends AbstractCell<RestaurantProxy>
 		else
 		{
 			renderer.getMoreLessDesc(parent).setInnerText("more");
-			renderer.getRestDesc(parent).setInnerText(resturant.getDesc().substring(0, 50) + "...");
+			renderer.getRestDesc(parent).setInnerText(resturant.getDesc().substring(0, 2) + "...");
 		}
 
 	}
@@ -84,7 +84,7 @@ public class resturantCell extends AbstractCell<RestaurantProxy>
 	{
 		String rowIndex = String.valueOf(context.getIndex() + 1);
 		String ResturantName = value.getName();
-		String Description = value.getDesc().substring(0, 50) + "...";
+		String Description = value.getDesc().substring(0, 2) + "...";
 		String Address = value.getAddress();
 
 		String Kosher = value.getIsKosher() ? "Kosher" : "Goy";
