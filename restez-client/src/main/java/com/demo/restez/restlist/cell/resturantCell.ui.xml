@@ -1,6 +1,78 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
+	<ui:style>
+		.title {
+			font-size: 40pt;
+			text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
+			float: left;
+			z-index: 2;
+			position: relative;
+		}
+		
+		.address {
+			float: left;
+			color: #808080;
+			font-size: 24pt;
+			margin-top: 10px;
+			margin-left: 20px;
+		}
+		
+		.desc {
+			font-size: 12pt;
+			color: #909090;
+			background-color: #f9f9f9;
+			border-radius: 3px;
+			padding: 6px;
+			clear: both;
+			float: left;
+			width: 100%;
+			margin: 15px 0;
+		}
+		
+		.resturant {
+			margin: 20px 0;
+			display: inline-block;
+			position: relative;
+		}
+		
+		.resturant:after {
+			content: ".";
+			display: block;
+			clear: both;
+			visibility: hidden;
+			line-height: 0;
+			height: 0;
+		}
+		
+		.rowIndex {
+			position: absolute;
+			font-size: 30pt;
+			background: #eee;
+			color: #bbb;
+			border-radius: 100px;
+			left:-50px;
+			top:-5px;
+			padding:20px;
+			box-shadow:1px 1px 1px #ccc;
+		}
+	</ui:style>
 	<ui:with field='name' type='java.lang.String' />
-	<h2>
-		<ui:text from='{name}' />
-	</h2>
+	<ui:with field='address' type='java.lang.String' />
+	<ui:with field='desc' type='java.lang.String' />
+	<ui:with field='index' type='java.lang.String' />
+	<div class="{style.resturant}">
+		<div class="{style.rowIndex}">
+			<ui:text from='{index}' />
+		</div>
+		<h2 class="{style.title}">
+			<ui:text from='{name}' />
+		</h2>
+		<span class="{style.address}">
+			<ui:text from='{address}' />
+		</span>
+
+		<div class="{style.desc}">
+			<ui:text from='{desc}' />
+		</div>
+
+	</div>
 </ui:UiBinder>

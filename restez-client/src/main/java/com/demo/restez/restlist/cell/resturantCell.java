@@ -10,7 +10,8 @@ public class resturantCell extends AbstractCell<RestaurantProxy>
 {
 	interface MyUiRenderer extends UiRenderer
 	{
-		void render(SafeHtmlBuilder sb, String name);
+		void render(SafeHtmlBuilder sb, String name, String desc, String address, String price, String isFancy,
+		        String isKosher, String rating, String serviceQuality, String takeAway, String index);
 	}
 
 	private static MyUiRenderer renderer = GWT.create(MyUiRenderer.class);
@@ -20,7 +21,12 @@ public class resturantCell extends AbstractCell<RestaurantProxy>
 	@Override
 	public void render(com.google.gwt.cell.client.Cell.Context context, RestaurantProxy value, SafeHtmlBuilder sb)
 	{
-		renderer.render(sb, value.getName());
+		String rowIndex = String.valueOf(context.getIndex() + 1);
+		String ResturantName = value.getName();
+		String Description = value.getDesc();
+		String Address = value.getAddress();
+
+		renderer.render(sb, ResturantName, Description, Address, "", "", "", "", "", "", rowIndex);
 
 	}
 

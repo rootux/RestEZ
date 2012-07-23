@@ -1,15 +1,12 @@
 package com.demo.restez;
 
+import com.demo.restez.restlist.DefaultResturantsList;
+import com.demo.restez.restlist.ResturantsList;
+import com.demo.restez.widgets.filter.DefaultFilterWidget;
+import com.demo.restez.widgets.filter.FilterWidget;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.KeyCodes;
-import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Singleton;
 
@@ -24,7 +21,13 @@ public class HomeViewImpl implements HomeView {
 	private final Widget w = binder.createAndBindUi(this);
 
 	private Presenter presenter;
-
+	
+	@UiField
+	DefaultResturantsList restList;
+	
+	@UiField
+	DefaultFilterWidget restFilter;
+	
 	@Override
 	public void setEnabled(boolean enabled) {
 	}
@@ -42,5 +45,17 @@ public class HomeViewImpl implements HomeView {
 	public Widget asWidget() {
 		return w;
 	}
+
+	@Override
+    public ResturantsList getRestList()
+    {
+	    return restList;
+    }
+
+	@Override
+    public FilterWidget getRestFilter()
+    {
+	    return restFilter;
+    }
 }
 

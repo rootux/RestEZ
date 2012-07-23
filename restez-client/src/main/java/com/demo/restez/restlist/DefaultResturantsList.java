@@ -13,6 +13,7 @@ import com.google.gwt.user.cellview.client.CellList;
 import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy.KeyboardSelectionPolicy;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.view.client.HasData;
 import com.google.gwt.view.client.ListDataProvider;
 
 public class DefaultResturantsList extends Composite implements ResturantsList
@@ -33,25 +34,13 @@ public class DefaultResturantsList extends Composite implements ResturantsList
 	public DefaultResturantsList()
 	{
 
-		  ListDataProvider<RestaurantProxy> resturants = new ListDataProvider<RestaurantProxy>();
-		  
-			
-	/*	resturants.getList().add("avazi");
-		resturants.getList().add("gute");
-		resturants.getList().add("McDonalds");
-		resturants.getList().add("the fat");
-		resturants.getList().add("Meat Bar");*/
-		
 		resturantCell restaurantCell = new resturantCell();
 		resturantList = new CellList<RestaurantProxy>(restaurantCell);
 		resturantList.setPageSize(30);
 		resturantList.setKeyboardSelectionPolicy(KeyboardSelectionPolicy.BOUND_TO_SELECTION);
-		
-		
 
 		initWidget(uiBinder.createAndBindUi(this));
-		
-		resturants.addDataDisplay(resturantList);
+
 	}
 
 
@@ -60,6 +49,15 @@ public class DefaultResturantsList extends Composite implements ResturantsList
 	public void setPresenter(Presenter presenter)
 	{
 
+	}
+
+
+
+	@Override
+	public HasData<RestaurantProxy> getDataDisplay()
+	{
+		// TODO Auto-generated method stub
+		return resturantList;
 	}
 
 }

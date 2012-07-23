@@ -6,20 +6,14 @@
 
 		<gwtbootstrap:Row>
 			<gwtbootstrap:Column size="4">
-				<f:DefaultFilterWidget />
+				<f:DefaultFilterWidget ui:field="restFilter" />
 			</gwtbootstrap:Column>
 			<gwtbootstrap:Column size="8">
-				<gwtbootstrap:Row>
-					<gwtbootstrap:Column size="12">
-						<g:HTMLPanel>
-							<h1>resurants</h1>
-						</g:HTMLPanel>
-					</gwtbootstrap:Column>
-				</gwtbootstrap:Row>
+
 
 				<gwtbootstrap:Row>
 					<gwtbootstrap:Column size="12">
-						<r:DefaultResturantsList />
+						<r:DefaultResturantsList ui:field="restList" />
 					</gwtbootstrap:Column>
 				</gwtbootstrap:Row>
 
