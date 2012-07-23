@@ -46,6 +46,11 @@
 			<gwtbootstrap:Column size="3">
 				<r:DefaultRatingSelector ui:field="ratingSelector"/>
 			</gwtbootstrap:Column>			
-		</gwtbootstrap:Row>										
+		</gwtbootstrap:Row>
+		<gwtbootstrap:Row>
+			<gwtbootstrap:Column size="6">
+				<gwtbootstrap:Button type="PRIMARY" ui:field="resetFilter" text="Reset Filter"/>
+			</gwtbootstrap:Column>
+		</gwtbootstrap:Row>								
 	</g:HTMLPanel>
 </ui:UiBinder> 
