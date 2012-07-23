@@ -25,14 +25,14 @@ public class Restaurant implements Serializable
 	private ServiceQuality serviceQuality;
 
 	@PodamIntValue(minValue = 1, maxValue = 10)
-	private int rating;
+	private Integer rating;
 
 	private boolean isTakeAway;
 
 
 
 	public Restaurant(String name, String desc, String address, boolean isKosher, boolean isFancy,
-	                  PriceCategory avgPrice, ServiceQuality serviceQuality, int rating, boolean isTakeAway)
+	                  PriceCategory avgPrice, ServiceQuality serviceQuality, Integer rating, boolean isTakeAway)
 	{
 		super();
 		this.name = name;
@@ -132,14 +132,14 @@ public class Restaurant implements Serializable
 
 
 
-	public int getRating()
+	public Integer getRating()
 	{
 		return rating;
 	}
 
 
 
-	public void setRating(int rating)
+	public void setRating(Integer rating)
 	{
 		this.rating = rating;
 	}
@@ -154,89 +154,85 @@ public class Restaurant implements Serializable
     }
 
 	@Override
-	public int hashCode()
-	{
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ( (address == null) ? 0 : address.hashCode());
-		result = prime * result + ( (avgPrice == null) ? 0 : avgPrice.hashCode());
-		result = prime * result + ( (desc == null) ? 0 : desc.hashCode());
-		result = prime * result + (isFancy ? 1231 : 1237);
-		result = prime * result + (isKosher ? 1231 : 1237);
-		result = prime * result + (isTakeAway ? 1231 : 1237);
-		result = prime * result + ( (name == null) ? 0 : name.hashCode());
-		result = prime * result + rating;
-		result = prime * result + ( (serviceQuality == null) ? 0 : serviceQuality.hashCode());
-		return result;
-	}
+    public int hashCode()
+    {
+	    final int prime = 31;
+	    int result = 1;
+	    result = prime * result + ( (this.address == null) ? 0 : this.address.hashCode());
+	    result = prime * result + ( (this.avgPrice == null) ? 0 : this.avgPrice.hashCode());
+	    result = prime * result + ( (this.desc == null) ? 0 : this.desc.hashCode());
+	    result = prime * result + (this.isFancy ? 1231 : 1237);
+	    result = prime * result + (this.isKosher ? 1231 : 1237);
+	    result = prime * result + (this.isTakeAway ? 1231 : 1237);
+	    result = prime * result + ( (this.name == null) ? 0 : this.name.hashCode());
+	    result = prime * result + ( (this.rating == null) ? 0 : this.rating.hashCode());
+	    result = prime * result + ( (this.serviceQuality == null) ? 0 : this.serviceQuality.hashCode());
+	    return result;
+    }
 
 
 
 	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (! (obj instanceof Restaurant))
-			return false;
-		Restaurant other = (Restaurant) obj;
-		if (address == null)
-		{
-			if (other.address != null)
-				return false;
-		}
-		else if (!address.equals(other.address))
-			return false;
-		if (avgPrice == null)
-		{
-			if (other.avgPrice != null)
-				return false;
-		}
-		else if (!avgPrice.equals(other.avgPrice))
-			return false;
-		if (desc == null)
-		{
-			if (other.desc != null)
-				return false;
-		}
-		else if (!desc.equals(other.desc))
-			return false;
-		if (isFancy != other.isFancy)
-			return false;
-		if (isKosher != other.isKosher)
-			return false;
-		if (isTakeAway != other.isTakeAway)
-			return false;
-		if (name == null)
-		{
-			if (other.name != null)
-				return false;
-		}
-		else if (!name.equals(other.name))
-			return false;
-		if (rating != other.rating)
-			return false;
-		if (serviceQuality == null)
-		{
-			if (other.serviceQuality != null)
-				return false;
-		}
-		else if (!serviceQuality.equals(other.serviceQuality))
-			return false;
-		return true;
-	}
+    public boolean equals(Object obj)
+    {
+	    if (this == obj)
+		    return true;
+	    if (obj == null)
+		    return false;
+	    if (getClass() != obj.getClass())
+		    return false;
+	    Restaurant other = (Restaurant) obj;
+	    if (this.address == null)
+	    {
+		    if (other.address != null)
+			    return false;
+	    }
+	    else if (!this.address.equals(other.address))
+		    return false;
+	    if (this.avgPrice != other.avgPrice)
+		    return false;
+	    if (this.desc == null)
+	    {
+		    if (other.desc != null)
+			    return false;
+	    }
+	    else if (!this.desc.equals(other.desc))
+		    return false;
+	    if (this.isFancy != other.isFancy)
+		    return false;
+	    if (this.isKosher != other.isKosher)
+		    return false;
+	    if (this.isTakeAway != other.isTakeAway)
+		    return false;
+	    if (this.name == null)
+	    {
+		    if (other.name != null)
+			    return false;
+	    }
+	    else if (!this.name.equals(other.name))
+		    return false;
+	    if (this.rating == null)
+	    {
+		    if (other.rating != null)
+			    return false;
+	    }
+	    else if (!this.rating.equals(other.rating))
+		    return false;
+	    if (this.serviceQuality != other.serviceQuality)
+		    return false;
+	    return true;
+    }
 
 
 
 	@Override
-	public String toString()
-	{
-		return "Restaurant [" + (address != null ? "address=" + address + ", " : "") +
-		        (avgPrice != null ? "avgPrice=" + avgPrice + ", " : "") + (desc != null ? "desc=" + desc + ", " : "") +
-		        "isFancy=" + isFancy + ", isKosher=" + isKosher + ", isTakeAway=" + isTakeAway + ", " +
-		        (name != null ? "name=" + name + ", " : "") + "rating=" + rating + ", " +
-		        (serviceQuality != null ? "serviceQuality=" + serviceQuality : "") + "]";
-	}
+    public String toString()
+    {
+	    return "Restaurant [" + (this.name != null ? "name=" + this.name + ", " : "") +
+	            (this.desc != null ? "desc=" + this.desc + ", " : "") +
+	            (this.address != null ? "address=" + this.address + ", " : "") + "isKosher=" + this.isKosher +
+	            ", isFancy=" + this.isFancy + ", " + (this.avgPrice != null ? "avgPrice=" + this.avgPrice + ", " : "") +
+	            (this.serviceQuality != null ? "serviceQuality=" + this.serviceQuality + ", " : "") +
+	            (this.rating != null ? "rating=" + this.rating + ", " : "") + "isTakeAway=" + this.isTakeAway + "]";
+    }
 }
