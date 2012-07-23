@@ -70,66 +70,66 @@ public class RestEzService
 
 		for (Restaurant restaurant : restaurants)
 		{
-			boolean adRestaurant = false;
+			boolean adRestaurant = true;
 			if (filter.getAddress() != null)
 			{
-				if (restaurant.getAddress().toLowerCase().contains(filter.getAddress().toLowerCase()))
+				if (!(restaurant.getAddress().toLowerCase().contains(filter.getAddress().toLowerCase())))
 				{
-					adRestaurant = true;
+					continue;
 				}
 			}
 			if (filter.getAvgPrice() != null)
 			{
-				if (restaurant.getAvgPrice() == filter.getAvgPrice())
+				if (!(restaurant.getAvgPrice() == filter.getAvgPrice()))
 				{
-					adRestaurant = true;
+					continue;
 				}
 			}
 			if (filter.getDesc() != null)
-				if (restaurant.getDesc().toLowerCase().contains(filter.getDesc().toLowerCase()))
+				if (!(restaurant.getDesc().toLowerCase().contains(filter.getDesc().toLowerCase())))
 				{
-					adRestaurant = true;
+					continue;
 				}
 			if (filter.getName() != null)
 			{
-				if (restaurant.getName().toLowerCase().contains(filter.getName().toLowerCase()))
+				if (!(restaurant.getName().toLowerCase().contains(filter.getName().toLowerCase())))
 				{
-					adRestaurant = true;
+					continue;
 				}
 			}
 			if (filter.getRating() != null)
 			{
-				if (restaurant.getRating() == filter.getRating())
+				if (!(restaurant.getRating() == filter.getRating()))
 				{
-					adRestaurant = true;
+					continue;
 				}
 			}
 			if (filter.getServiceQuality() != null)
 			{
-				if (restaurant.getServiceQuality().equals(filter.getServiceQuality()))
+				if (!(restaurant.getServiceQuality().equals(filter.getServiceQuality())))
 				{
-					adRestaurant = true;
+					continue;
 				}
 			}
 			if (filter.getIsFancy() == true)
 			{
-				if (restaurant.getIsFancy())
+				if (!(restaurant.getIsFancy()))
 				{
-					adRestaurant = true;
+					continue;
 				}
 			}
 			if (filter.getIsKosher() == true)
 			{
-				if (restaurant.getIsKosher())
+				if (!(restaurant.getIsKosher()))
 				{
-					adRestaurant = true;
+					continue;
 				}
 			}
 			if (filter.getIsTakeAway() == true)
 			{
-				if (restaurant.getIsTakeAway())
+				if (!(restaurant.getIsTakeAway()))
 				{
-					adRestaurant = true;
+					continue;
 				}
 			}			
 			
