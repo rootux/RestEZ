@@ -91,7 +91,9 @@ public class DefaultRatingSelector extends Composite implements HasValue<Integer
 		else if (panel.equals(star2Panel))
 			onStarClick(2);
 		else
-			onStarClick(3);	
+			onStarClick(3);
+		
+		fireChangeEvent();
 	}
 	
 	private void onStarClick(int rating)
