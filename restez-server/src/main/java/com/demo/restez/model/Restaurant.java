@@ -18,6 +18,20 @@ public class Restaurant implements Serializable
     private int rating;
     private boolean isTakeAway;
     
+	public Restaurant(String name, String desc, String address, boolean isKosher, boolean isFancy,
+                      PriceCategory avgPrice, ServiceQuality serviceQuality, int rating, boolean isTakeAway)
+    {
+	    super();
+	    this.name = name;
+	    this.desc = desc;
+	    this.address = address;
+	    this.isKosher = isKosher;
+	    this.isFancy = isFancy;
+	    this.avgPrice = avgPrice;
+	    this.serviceQuality = serviceQuality;
+	    this.rating = rating;
+	    this.isTakeAway = isTakeAway;
+    }
 	public String getName()
     {
     	return name;
