@@ -25,13 +25,16 @@ public class FilterWidgetPresenter implements FilterWidget.Presenter
     {
 		this.eventBus = eventBus;
 		widget.setPresenter(this);
+		
+		currentContext = restEzService.getRestEzService();
+		filter = currentContext.create(RestaurantProxy.class);
+		widget.getEditorDriver().edit(filter, currentContext);
     }
 
 	@Override
     public void filterChanged()
     {
-		currentContext = restEzService.getRestEzService();
-		widget.getEditorDriver().edit(filter, currentContext);
+		
 		widget.getEditorDriver().flush();
 	    eventBus.fireEvent(new FilterChangedEvent(filter));
     }

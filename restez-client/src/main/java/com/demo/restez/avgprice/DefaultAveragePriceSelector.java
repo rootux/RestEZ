@@ -51,7 +51,7 @@ public class DefaultAveragePriceSelector extends Composite implements HasValue<P
 	@Override
     public void setValue(PriceCategory value)
     {
-		setValue(value);
+		setValue(value, false);
     }
 
 	@Override

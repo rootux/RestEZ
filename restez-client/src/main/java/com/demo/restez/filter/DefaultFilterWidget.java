@@ -59,12 +59,14 @@ public class DefaultFilterWidget extends Composite implements FilterWidget
 	Presenter presenter;
 	
 	interface Driver extends RequestFactoryEditorDriver<RestaurantProxy, DefaultFilterWidget>{}
+	
 	private final Driver driver = GWT.create(Driver.class);
 	
 
 	public DefaultFilterWidget()
 	{
 		initWidget(uiBinder.createAndBindUi(this));
+		driver.initialize(this);
 	}
 	
 	@UiHandler({"nameTextBox", "descTextBox", "addrTextBox"})

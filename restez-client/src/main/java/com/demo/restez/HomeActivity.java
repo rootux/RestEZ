@@ -1,5 +1,6 @@
 package com.demo.restez;
 
+import com.demo.restez.filter.FilterWidgetPresenter;
 import com.demo.restez.restlist.DefaultRestListPresenter;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.place.shared.PlaceController;
@@ -28,6 +29,9 @@ public class HomeActivity extends AbstractActivity implements HomeView.Presenter
 		
 		DefaultRestListPresenter restListPrester = new DefaultRestListPresenter(view.getRestList(), restEzService);
 		restListPrester.start(eventBus);
+		
+		FilterWidgetPresenter filterPresenter = new FilterWidgetPresenter(view.getRestFilter(), restEzService);
+		filterPresenter.start(eventBus);
 	}
 }
 
