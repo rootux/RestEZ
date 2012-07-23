@@ -10,7 +10,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
-public class DefaultFilterWidget extends Composite
+public class DefaultFilterWidget extends Composite implements FilterWidget
 {
 
 	private static DefaultFilterWidgetUiBinder uiBinder = GWT.create(DefaultFilterWidgetUiBinder.class);
