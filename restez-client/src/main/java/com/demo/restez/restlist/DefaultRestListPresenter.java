@@ -1,11 +1,14 @@
 package com.demo.restez.restlist;
 
+import java.util.List;
+
 import com.demo.restez.AppFactory;
 import com.demo.restez.enums.PriceCategory;
 import com.demo.restez.enums.ServiceQuality;
 import com.demo.restez.proxies.RestaurantProxy;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.view.client.ListDataProvider;
+import com.google.web.bindery.requestfactory.shared.Receiver;
 
 public class DefaultRestListPresenter implements ResturantsList.Presenter
 {
@@ -51,6 +54,17 @@ public class DefaultRestListPresenter implements ResturantsList.Presenter
 		ListDataProvider<RestaurantProxy> resturants = new ListDataProvider<RestaurantProxy>();
 		resturants.getList().add(restProxy);
 		resturants.getList().add(restProxy1);
+		
+		
+		restEzService.getRestEzService().getRestaurants(null).fire(new Receiver<List<RestaurantProxy>>()
+		{
+			@Override
+            public void onSuccess(List<RestaurantProxy> response)
+            {
+	            // TODO Auto-generated method stub
+	            
+            }
+		});
 
 		resturants.addDataDisplay(widget.getDataDisplay());
 

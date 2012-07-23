@@ -1,20 +1,47 @@
 package com.demo.restez.services;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import uk.co.jemos.podam.api.PodamFactoryImpl;
+
 import com.demo.restez.enums.PriceCategory;
 import com.demo.restez.enums.ServiceQuality;
 import com.demo.restez.model.Restaurant;
+import com.google.inject.Inject;
 
 public class RestEzService
 {
+	PodamFactoryImpl podamFactory;
+	
+	List<Restaurant> restaurants;
+	
+	@Inject
+	public RestEzService(PodamFactoryImpl podamFactory)
+    {
+	    super();
+	    this.podamFactory = podamFactory;
+	    
+	    generateRests();
+    }
+
+
+
+	private void generateRests()
+    {
+		restaurants = new ArrayList<Restaurant>();
+		for (int i = 0; i < 30; i++ )
+        {
+			restaurants.add(podamFactory.manufacturePojo(Restaurant.class));
+        }
+    }
+
+
+
 	public List<Restaurant> getRestaurants(Restaurant filter)
 	{
-		if (filter == null)
-			return Arrays.asList(new Restaurant("1", "1", "1", true, true, PriceCategory.High, ServiceQuality.Bad, 1, true));
-		
-		return Collections.emptyList();
+		return restaurants;
 	}
 }

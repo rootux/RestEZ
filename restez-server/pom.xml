@@ -52,6 +52,11 @@
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
     </dependency>
+    <dependency>
+            <groupId>uk.co.jemos.podam</groupId>
+            <artifactId>podam</artifactId>
+            <version>3.0.0.RELEASE</version>
+    </dependency>
   </dependencies>
 
   <build>
