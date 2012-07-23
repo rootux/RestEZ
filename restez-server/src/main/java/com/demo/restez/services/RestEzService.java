@@ -5,6 +5,8 @@ import java.util.List;
 
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
+import com.demo.restez.enums.PriceCategory;
+import com.demo.restez.enums.ServiceQuality;
 import com.demo.restez.model.Restaurant;
 import com.google.inject.Inject;
 
@@ -21,7 +23,6 @@ public class RestEzService
 	{
 		super();
 		this.podamFactory = podamFactory;
-
 		generateRests();
 	}
 
@@ -30,10 +31,13 @@ public class RestEzService
 	private void generateRests()
 	{
 		restaurants = new ArrayList<Restaurant>();
-		for (int i = 0; i < 30; i++ )
-		{
-			restaurants.add(podamFactory.manufacturePojo(Restaurant.class));
-		}
+		
+		restaurants.add(new Restaurant("Avazi", "too much food", "aba even 1", true, false, PriceCategory.Low, ServiceQuality.Good, 3, true));
+		restaurants.add(new Restaurant("BBB", "amburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburger", "mul moses", true, false, PriceCategory.High, ServiceQuality.Good, 2, true));
+		restaurants.add(new Restaurant("Gute", "Anti Antibaiotics", "mul yarden", true, false, PriceCategory.Medium, ServiceQuality.Good, 3, true));
+		restaurants.add(new Restaurant("שניצל קומפני", "shnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzel", "mul yarden", true, false, PriceCategory.Medium, ServiceQuality.Good, 3, true));
+		restaurants.add(new Restaurant("חומוס צנעני", "all day all night eating humus its not good, i love humus but it makes me feel bad. i love humus", "mul the dat guy 3", true, false, PriceCategory.Low, ServiceQuality.Good, 1, true));
+		
 	}
 
 
