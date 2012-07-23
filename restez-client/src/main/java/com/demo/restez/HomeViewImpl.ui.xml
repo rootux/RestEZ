@@ -9,21 +9,25 @@
 		.header {
 			background: #f1f1f1;
 			padding: 10px;
-			margin: 0 2px 20px  2px;
+			margin: 0 2px 20px 2px;
 			border-radius: 3px;
-			
 		}
 		
-		.list{
-	margin-left:80px;
-}
+		.list {
+			margin-left: 80px;
+		}
 	</ui:style>
 	<g:HTMLPanel styleName="{style.container}">
 		<gwtbootstrap:Row>
 			<gwtbootstrap:Column size="12">
 				<g:HTML styleName="{style.header}">
 					<h1 style="text-align:left">REST EZ</h1>
-					<div style="font-size:13pt;color:#ccc;">a Taykey service</div>
+					<div style="font-size:13pt;color:#ccc;">
+						a
+
+						<img ui:field="taykeylogo" style="height:23px;vertical-align:-20%;opacity:.4" />
+						service
+					</div>
 				</g:HTML>
 			</gwtbootstrap:Column>
 		</gwtbootstrap:Row>
@@ -36,7 +40,8 @@
 
 				<gwtbootstrap:Row>
 					<gwtbootstrap:Column size="12">
-						<r:DefaultResturantsList ui:field="restList" styleName="{style.list}" />
+						<r:DefaultResturantsList ui:field="restList"
+							styleName="{style.list}" />
 					</gwtbootstrap:Column>
 				</gwtbootstrap:Row>
 
