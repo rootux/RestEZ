@@ -14,6 +14,8 @@ public class RestEzService
 
 	List<Restaurant> restaurants;
 
+
+
 	@Inject
 	public RestEzService(PodamFactoryImpl podamFactory)
 	{
@@ -42,44 +44,60 @@ public class RestEzService
 		{
 			return restaurants;
 		}
-		
+
 		return filterRestaurants(filter);
 	}
 
 
 
 	private List<Restaurant> filterRestaurants(Restaurant filter)
-    {
-	    List<Restaurant> filtered = new ArrayList<Restaurant>();
+	{
+		List<Restaurant> filtered = new ArrayList<Restaurant>();
 
 		for (Restaurant restaurant : restaurants)
 		{
 			boolean adRestaurant = false;
-			if (restaurant.getAddress().toLowerCase().contains(filter.getAddress().toLowerCase()))
+			if (filter.getAddress() != null)
 			{
-				adRestaurant = true;
+				if (restaurant.getAddress().toLowerCase().contains(filter.getAddress().toLowerCase()))
+				{
+					adRestaurant = true;
+				}
 			}
-			if (restaurant.getAvgPrice() == filter.getAvgPrice())
+			if (filter.getAvgPrice() != null)
 			{
-				adRestaurant = true;
+				if (restaurant.getAvgPrice() == filter.getAvgPrice())
+				{
+					adRestaurant = true;
+				}
 			}
-			if (restaurant.getDesc().toLowerCase().contains(filter.getDesc().toLowerCase()))
+			if (filter.getDesc() != null)
+				if (restaurant.getDesc().toLowerCase().contains(filter.getDesc().toLowerCase()))
+				{
+					adRestaurant = true;
+				}
+			if (filter.getName() != null)
 			{
-				adRestaurant = true;
+				if (restaurant.getName().toLowerCase().contains(filter.getName().toLowerCase()))
+				{
+					adRestaurant = true;
+				}
 			}
-			if (restaurant.getName().toLowerCase().contains(filter.getName().toLowerCase()))
+			if (filter.getRating() != null)
 			{
-				adRestaurant = true;
+				if (restaurant.getRating() == filter.getRating())
+				{
+					adRestaurant = true;
+				}
 			}
-			if (restaurant.getRating() == filter.getRating())
+			if (filter.getServiceQuality() != null)
 			{
-				adRestaurant = true;
-	        }
-			if (restaurant.getServiceQuality().equals(filter.getServiceQuality()))
-			{
-				adRestaurant = true;
-	        }
-			
+				if (restaurant.getServiceQuality().equals(filter.getServiceQuality()))
+				{
+					adRestaurant = true;
+				}
+			}
+
 			if (adRestaurant)
 			{
 				filtered.add(restaurant);
@@ -87,5 +105,5 @@ public class RestEzService
 		}
 
 		return filtered;
-    }
+	}
 }

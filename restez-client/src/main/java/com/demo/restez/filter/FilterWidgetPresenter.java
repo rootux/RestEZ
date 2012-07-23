@@ -34,7 +34,6 @@ public class FilterWidgetPresenter implements FilterWidget.Presenter
 	@Override
     public void filterChanged()
     {
-		
 		widget.getEditorDriver().flush();
 	    eventBus.fireEvent(new FilterChangedEvent(filter));
     }

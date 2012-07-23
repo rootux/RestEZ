@@ -5,6 +5,8 @@ import java.util.List;
 import com.demo.restez.AppFactory;
 import com.demo.restez.events.FilterChangedEvent;
 import com.demo.restez.proxies.RestaurantProxy;
+import com.demo.restez.servicesProxy.RestEzServiceProxy;
+import com.demo.restez.utils.ContextProjector;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.view.client.ListDataProvider;
 import com.google.web.bindery.requestfactory.shared.Receiver;
@@ -51,7 +53,9 @@ public class DefaultRestListPresenter implements ResturantsList.Presenter
 
 	private void refreshData(RestaurantProxy filterProxy)
 	{
-		restEzService.getRestEzService().getRestaurants(filterProxy).fire(new Receiver<List<RestaurantProxy>>()
+		RestEzServiceProxy context = restEzService.getRestEzService();
+		filterProxy = ContextProjector.copyBeanByContext(context, filterProxy, RestaurantProxy.class);
+		context.getRestaurants(filterProxy).fire(new Receiver<List<RestaurantProxy>>()
 		{
 			@Override
 			public void onSuccess(List<RestaurantProxy> response)
