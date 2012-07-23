@@ -61,8 +61,6 @@ public class DefaultAveragePriceSelector extends Composite implements HasValue<P
 			value = PriceCategory.Low;
 		
 		onBtnClick(value);
-		this.priceCategory = value;
-		
 		if (fireEvents)
 			fireChangeEvent();
     }
@@ -87,6 +85,7 @@ public class DefaultAveragePriceSelector extends Composite implements HasValue<P
 	
 	private void onBtnClick(PriceCategory value)
 	{
+		this.priceCategory = value;
 		if (value.equals(PriceCategory.Low))
 		{
 			lowBtn.getElement().addClassName("active");

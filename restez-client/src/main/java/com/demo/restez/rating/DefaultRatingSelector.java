@@ -68,11 +68,8 @@ public class DefaultRatingSelector extends Composite implements HasValue<Integer
 	@Override
     public void setValue(Integer value, boolean fireEvents)
     {
-	    if (value == null)
-	    {
+	    if (value == null || value == 0)
 	    	value = 1;
-	    	rating = 1;
-	    }
 	    
 	    onStarClick(value);
 		if (fireEvents)
@@ -99,6 +96,7 @@ public class DefaultRatingSelector extends Composite implements HasValue<Integer
 	
 	private void onStarClick(int rating)
     {
+		this.rating = rating;
 		if (rating == 1)
 		{
 			selectStar(star1);
