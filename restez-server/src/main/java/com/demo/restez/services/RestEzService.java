@@ -32,12 +32,22 @@ public class RestEzService
 	{
 		restaurants = new ArrayList<Restaurant>();
 		
-		restaurants.add(new Restaurant("Avazi", "too much food", "aba even 1", true, false, PriceCategory.Low, ServiceQuality.Good, 3, true));
-		restaurants.add(new Restaurant("BBB", "amburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburgeramburger", "mul moses", true, false, PriceCategory.High, ServiceQuality.Good, 2, true));
-		restaurants.add(new Restaurant("Gute", "Anti Antibaiotics", "mul yarden", true, false, PriceCategory.Medium, ServiceQuality.Good, 3, true));
+		restaurants.add(new Restaurant("Avazi", "too much food", "aba even 1", true, false, PriceCategory.Low, ServiceQuality.Great, 3, true));
+		restaurants.add(new Restaurant("BBB", "The worst burger to go", "mul moses", true, false, PriceCategory.Low, ServiceQuality.Bad, 2, true));
+		restaurants.add(new Restaurant("Gute", "Anti Antibaiotics", "mul yarden", true, false, PriceCategory.Medium, ServiceQuality.Bad, 3, true));
 		restaurants.add(new Restaurant("שניצל קומפני", "shnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzelshnitzel", "mul yarden", true, false, PriceCategory.Medium, ServiceQuality.Good, 3, true));
 		restaurants.add(new Restaurant("חומוס צנעני", "all day all night eating humus its not good, i love humus but it makes me feel bad. i love humus", "mul the dat guy 3", true, false, PriceCategory.Low, ServiceQuality.Good, 1, true));
 		
+		restaurants.add(new Restaurant("Kyoto", "Best sushi in Herzelya, but Moon is much better!!", "Mul Giraffe", false, true, PriceCategory.High, ServiceQuality.Great, 3, true));
+		restaurants.add(new Restaurant("Zuzobra", "Like Giraffe but worst", "Near Kyoto", false, false, PriceCategory.Medium, ServiceQuality.Good, 2, true));
+		restaurants.add(new Restaurant("Giraffe", "Like Zouzobra but better", "Near meat bar", false, true, PriceCategory.Medium, ServiceQuality.Good, 3, false));
+		restaurants.add(new Restaurant("McDonalds", "Better burger joint in town", "Under Amobee", false, false, PriceCategory.Low, ServiceQuality.Great, 2, true));
+		restaurants.add(new Restaurant("Moses", "Better burger joint in town after McDonalds", "Mul Zozubra", false, true, PriceCategory.Medium, ServiceQuality.Bad, 1, true));
+		
+		restaurants.add(new Restaurant("Sebastian", "Best Schnizel in town", "Behind Nir", false, true, PriceCategory.High, ServiceQuality.Great, 3, false));
+		restaurants.add(new Restaurant("Olive", "The best place to go when you don't have where to go", "Look right from Omer's office", false, false, PriceCategory.Medium, ServiceQuality.Good, 1, true));
+		restaurants.add(new Restaurant("The Fat Guy", "When you feel fat", "Near meat bar", false, false, PriceCategory.Medium, ServiceQuality.Great, 3, true));
+		restaurants.add(new Restaurant("Meat Bar", "Udy's favorite!", "Ask Udy", false, true, PriceCategory.Medium, ServiceQuality.Good, 3, true));
 	}
 
 
@@ -101,7 +111,28 @@ public class RestEzService
 					adRestaurant = true;
 				}
 			}
-
+			if (filter.getIsFancy() == true)
+			{
+				if (restaurant.getIsFancy())
+				{
+					adRestaurant = true;
+				}
+			}
+			if (filter.getIsKosher() == true)
+			{
+				if (restaurant.getIsKosher())
+				{
+					adRestaurant = true;
+				}
+			}
+			if (filter.getIsTakeAway() == true)
+			{
+				if (restaurant.getIsTakeAway())
+				{
+					adRestaurant = true;
+				}
+			}			
+			
 			if (adRestaurant)
 			{
 				filtered.add(restaurant);
