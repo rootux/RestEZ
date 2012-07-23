@@ -27,9 +27,9 @@ public class resturantCell extends AbstractCell<RestaurantProxy>
 		String Description = value.getDesc();
 		String Address = value.getAddress();
 
-		String Kosher = value.isKosher() ? "Kosher" : "Goy";
-		String fancy = value.isFancy() ? "Fancy Place" : "Simple Place";
-		String takeAway = value.isTakeAway() ? "Take Away" : "NO Take Away";
+		String Kosher = value.getIsKosher() ? "Kosher" : "Goy";
+		String fancy = value.getIsFancy() ? "Fancy Place" : "Simple Place";
+		String takeAway = value.getIsTakeAway() ? "Take Away" : "NO Take Away";
 		String price;
 		switch (value.getAvgPrice())
 		{
