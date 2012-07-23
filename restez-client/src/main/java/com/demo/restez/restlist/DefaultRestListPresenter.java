@@ -47,11 +47,23 @@ public class DefaultRestListPresenter implements ResturantsList.Presenter
 		restProxy1.setRating(10);
 		restProxy1.setServiceQuality(ServiceQuality.Great);
 		restProxy1.setTakeAway(true);
+		
+		
+		RestaurantProxy restProxy2 = restEzService.getRestEzService().create(RestaurantProxy.class);
+		restProxy2.setName("MeatBar");
+		restProxy2.setAddress("maskit 88");
+		restProxy2.setAvgPrice(PriceCategory.Medium);
+		restProxy2.setDesc("Many options and great taste.");
+		restProxy2.setFancy(true);
+		restProxy2.setKosher(true);
+		restProxy2.setRating(7);
+		restProxy2.setServiceQuality(ServiceQuality.Good);
+		restProxy2.setTakeAway(false);
 
 		ListDataProvider<RestaurantProxy> resturants = new ListDataProvider<RestaurantProxy>();
 		resturants.getList().add(restProxy);
 		resturants.getList().add(restProxy1);
-
+		resturants.getList().add(restProxy2);
 		resturants.addDataDisplay(widget.getDataDisplay());
 
 	}
