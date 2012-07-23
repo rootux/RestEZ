@@ -52,7 +52,7 @@ public class DefaultResturantsList extends Composite implements ResturantsList
 
 		initWidget(uiBinder.createAndBindUi(this));
 
-		scrollPanel.setHeight(String.valueOf(Window.getClientHeight()) + "px");
+		scrollPanel.setHeight(String.valueOf(Window.getClientHeight()-150) + "px");
 
 	}
 

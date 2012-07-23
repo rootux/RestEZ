@@ -7,7 +7,7 @@
 		}
 	</ui:style>
 
-	<g:ScrollPanel ui:field="scrollPanel"  width="100%">
+	<g:ScrollPanel ui:field="scrollPanel" width="700px">
 		<c:CellList ui:field="resturantList" styleName="{style.celllist}" />
 	</g:ScrollPanel>
 </ui:UiBinder> 
