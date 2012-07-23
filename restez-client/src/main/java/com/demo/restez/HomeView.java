@@ -1,7 +1,7 @@
 package com.demo.restez;
 
 import com.demo.restez.restlist.ResturantsList;
-import com.demo.restez.widgets.filter.FilterWidget;
+import com.demo.restez.filter.FilterWidget;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.inject.ImplementedBy;
 

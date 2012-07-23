@@ -1,8 +1,10 @@
-package com.demo.restez.widgets.rating;
+package com.demo.restez.rating;
 
 import com.github.gwtbootstrap.client.ui.Icon;
 import com.github.gwtbootstrap.client.ui.constants.IconType;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.editor.client.IsEditor;
+import com.google.gwt.editor.client.adapters.TakesValueEditor;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
@@ -15,7 +17,7 @@ import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.Widget;
 
-public class DefaultRatingSelector extends Composite implements HasValue<Integer>
+public class DefaultRatingSelector extends Composite implements HasValue<Integer>, IsEditor<TakesValueEditor<Integer>>
 {
 
 	private static DefaultRatingSelectorUiBinder uiBinder = GWT.create(DefaultRatingSelectorUiBinder.class);
@@ -43,6 +45,8 @@ public class DefaultRatingSelector extends Composite implements HasValue<Integer
 	Icon star3;
 	
 	private Integer rating;
+	
+	private TakesValueEditor<Integer> editor;
 
 	public DefaultRatingSelector()
 	{
@@ -125,6 +129,16 @@ public class DefaultRatingSelector extends Composite implements HasValue<Integer
     public void fireChangeEvent()
     {
 		ValueChangeEvent.fire(DefaultRatingSelector.this, getValue());	    
+    }
+
+	@Override
+    public TakesValueEditor<Integer> asEditor()
+    {
+	    if (editor == null)
+	    {
+	    	editor = TakesValueEditor.of(this);
+	    }
+	    return editor;
     }	
 
 }

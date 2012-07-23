@@ -42,19 +42,19 @@ public class Restaurant implements Serializable
     {
     	this.address = address;
     }
-	public boolean isKosher()
+	public boolean getIsKosher()
     {
     	return isKosher;
     }
-	public void setKosher(boolean isKosher)
+	public void setIsKosher(boolean isKosher)
     {
     	this.isKosher = isKosher;
     }
-	public boolean isFancy()
+	public boolean getIsFancy()
     {
     	return isFancy;
     }
-	public void setFancy(boolean isFancy)
+	public void setIsFancy(boolean isFancy)
     {
     	this.isFancy = isFancy;
     }
@@ -82,11 +82,11 @@ public class Restaurant implements Serializable
     {
     	this.rating = rating;
     }
-	public boolean isTakeAway()
+	public boolean getIsTakeAway()
     {
     	return isTakeAway;
     }
-	public void setTakeAway(boolean isTakeAway)
+	public void setIsTakeAway(boolean isTakeAway)
     {
     	this.isTakeAway = isTakeAway;
     }

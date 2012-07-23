@@ -1,8 +1,10 @@
-package com.demo.restez.widgets.avgprice;
+package com.demo.restez.avgprice;
 
 import com.demo.restez.enums.PriceCategory;
 import com.github.gwtbootstrap.client.ui.Button;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.editor.client.IsEditor;
+import com.google.gwt.editor.client.adapters.TakesValueEditor;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
@@ -14,9 +16,8 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.Widget;
 
-public class DefaultAveragePriceSelector extends Composite implements HasValue<PriceCategory>
+public class DefaultAveragePriceSelector extends Composite implements HasValue<PriceCategory>, IsEditor<TakesValueEditor<PriceCategory>>
 {
-
 	private static DefaultAveragePriceSelectorUiBinder uiBinder = GWT.create(DefaultAveragePriceSelectorUiBinder.class);
 
 	interface DefaultAveragePriceSelectorUiBinder extends UiBinder<Widget, DefaultAveragePriceSelector>
@@ -33,6 +34,8 @@ public class DefaultAveragePriceSelector extends Composite implements HasValue<P
 	Button highBtn;
 	
 	PriceCategory priceCategory;
+	
+	private TakesValueEditor<PriceCategory> editor;
 
 	public DefaultAveragePriceSelector()
 	{
@@ -107,5 +110,15 @@ public class DefaultAveragePriceSelector extends Composite implements HasValue<P
     public void fireChangeEvent()
     {
 		ValueChangeEvent.fire(DefaultAveragePriceSelector.this, getValue());	    
+    }
+
+	@Override
+    public TakesValueEditor<PriceCategory> asEditor()
+    {
+		if (editor == null)
+		{
+			editor = TakesValueEditor.of(this);
+		}
+		return editor;
     }
 }

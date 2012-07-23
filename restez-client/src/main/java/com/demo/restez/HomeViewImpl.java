@@ -1,12 +1,14 @@
 package com.demo.restez;
 
+import com.demo.restez.filter.DefaultFilterWidget;
+import com.demo.restez.filter.FilterWidget;
 import com.demo.restez.restlist.DefaultResturantsList;
 import com.demo.restez.restlist.ResturantsList;
-import com.demo.restez.widgets.filter.DefaultFilterWidget;
-import com.demo.restez.widgets.filter.FilterWidget;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Singleton;
 
