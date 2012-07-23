@@ -59,6 +59,9 @@ public class DefaultAveragePriceSelector extends Composite implements HasValue<P
 		
 		onBtnClick(value);
 		this.priceCategory = value;
+		
+		if (fireEvents)
+			fireChangeEvent();
     }
 
 	@Override
@@ -101,4 +104,8 @@ public class DefaultAveragePriceSelector extends Composite implements HasValue<P
 		}	
 	}
 
+    public void fireChangeEvent()
+    {
+		ValueChangeEvent.fire(DefaultAveragePriceSelector.this, getValue());	    
+    }
 }
