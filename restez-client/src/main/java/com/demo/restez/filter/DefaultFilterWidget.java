@@ -4,9 +4,11 @@ import com.demo.restez.avgprice.DefaultAveragePriceSelector;
 import com.demo.restez.enums.PriceCategory;
 import com.demo.restez.proxies.RestaurantProxy;
 import com.demo.restez.rating.DefaultRatingSelector;
+import com.github.gwtbootstrap.client.ui.Button;
 import com.github.gwtbootstrap.client.ui.CheckBox;
 import com.github.gwtbootstrap.client.ui.TextBox;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -56,6 +58,10 @@ public class DefaultFilterWidget extends Composite implements FilterWidget
 	@UiField
 	DefaultRatingSelector ratingSelector;
 	
+	@Ignore
+	@UiField
+	Button resetFilter;
+	
 	Presenter presenter;
 	
 	interface Driver extends RequestFactoryEditorDriver<RestaurantProxy, DefaultFilterWidget>{}
@@ -93,7 +99,14 @@ public class DefaultFilterWidget extends Composite implements FilterWidget
 		fireChangeEvent();
     }
 	
-    public void fireChangeEvent()
+	@UiHandler("resetFilter")
+	public void onClick(ClickEvent event)
+	{
+		clearEditor();
+		presenter.resetFilter();
+	}	
+
+	public void fireChangeEvent()
     {
     	presenter.filterChanged();
     }
@@ -108,6 +121,18 @@ public class DefaultFilterWidget extends Composite implements FilterWidget
     public RequestFactoryEditorDriver<RestaurantProxy, ?> getEditorDriver()
     {
 	    return driver;
+    }
+	
+    private void clearEditor()
+    {
+		nameTextBox.setValue(null);
+		descTextBox.setValue(null);
+		addrTextBox.setValue(null);
+		kosherCb.setValue(false);
+		fancyCb.setValue(false);
+		takeAwayCb.setValue(false);
+		avgSelector.setValue(null);
+		ratingSelector.setValue(null);	    
     }
 
 }
