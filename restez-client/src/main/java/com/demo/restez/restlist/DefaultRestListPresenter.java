@@ -17,6 +17,8 @@ public class DefaultRestListPresenter implements ResturantsList.Presenter
 
 	private AppFactory restEzService;
 
+	ListDataProvider<RestaurantProxy> resturants = new ListDataProvider<RestaurantProxy>();
+
 
 
 	public DefaultRestListPresenter(ResturantsList restList, AppFactory restEzService)
@@ -29,7 +31,7 @@ public class DefaultRestListPresenter implements ResturantsList.Presenter
 
 	public void start(EventBus eventBus)
 	{
-		RestaurantProxy restProxy = restEzService.getRestEzService().create(RestaurantProxy.class);
+/*		RestaurantProxy restProxy = restEzService.getRestEzService().create(RestaurantProxy.class);
 		restProxy.setName("avazi");
 		restProxy.setAddress("abu ibn 18");
 		restProxy.setAvgPrice(PriceCategory.Low);
@@ -50,24 +52,22 @@ public class DefaultRestListPresenter implements ResturantsList.Presenter
 		restProxy1.setRating(10);
 		restProxy1.setServiceQuality(ServiceQuality.Great);
 		restProxy1.setTakeAway(true);
-
-		ListDataProvider<RestaurantProxy> resturants = new ListDataProvider<RestaurantProxy>();
-		resturants.getList().add(restProxy);
-		resturants.getList().add(restProxy1);
-		
+*/
+		//ListDataProvider<RestaurantProxy> resturants = new ListDataProvider<RestaurantProxy>();
+		resturants.addDataDisplay(widget.getDataDisplay());
 		
 		restEzService.getRestEzService().getRestaurants(null).fire(new Receiver<List<RestaurantProxy>>()
 		{
 			@Override
             public void onSuccess(List<RestaurantProxy> response)
             {
-	            // TODO Auto-generated method stub
+				resturants.setList(response);
+				
 	            
             }
 		});
 
-		resturants.addDataDisplay(widget.getDataDisplay());
+	
 
 	}
-
 }
