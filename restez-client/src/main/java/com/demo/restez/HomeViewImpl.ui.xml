@@ -3,7 +3,8 @@
 	xmlns:r="urn:import:com.demo.restez.restlist" xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui">
 	<ui:style>
 		.container {
-			margin: 20px;
+			margin:0 auto;
+			width:1000px;
 		}
 		
 		.header {
