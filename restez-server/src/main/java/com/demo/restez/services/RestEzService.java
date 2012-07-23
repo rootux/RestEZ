@@ -1,14 +1,10 @@
 package com.demo.restez.services;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
-import com.demo.restez.enums.PriceCategory;
-import com.demo.restez.enums.ServiceQuality;
 import com.demo.restez.model.Restaurant;
 import com.google.inject.Inject;
 
