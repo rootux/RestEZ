@@ -1,5 +1,7 @@
 package com.demo.restez.restlist;
 
+import java.awt.ScrollPane;
+
 import com.demo.restez.enums.PriceCategory;
 import com.demo.restez.enums.ServiceQuality;
 import com.demo.restez.proxies.RestaurantProxy;
@@ -14,7 +16,9 @@ import com.google.gwt.user.cellview.client.CellList;
 import com.google.gwt.user.cellview.client.CellList.Resources;
 import com.google.gwt.user.cellview.client.CellList.Style;
 import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy.KeyboardSelectionPolicy;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.HasData;
 import com.google.gwt.view.client.ListDataProvider;
@@ -32,19 +36,23 @@ public class DefaultResturantsList extends Composite implements ResturantsList
 	@UiField(provided = true)
 	CellList<RestaurantProxy> resturantList;
 
+	@UiField
+	ScrollPanel scrollPanel;
+
 
 
 	public DefaultResturantsList()
 	{
 
 		resturantCell restaurantCell = new resturantCell();
-		
-		resturantList = new CellList<RestaurantProxy>(restaurantCell );
+
+		resturantList = new CellList<RestaurantProxy>(restaurantCell);
 		resturantList.setPageSize(30);
 		resturantList.setKeyboardSelectionPolicy(KeyboardSelectionPolicy.BOUND_TO_SELECTION);
-		
 
 		initWidget(uiBinder.createAndBindUi(this));
+
+		scrollPanel.setHeight(String.valueOf(Window.getClientHeight()) + "px");
 
 	}
 
