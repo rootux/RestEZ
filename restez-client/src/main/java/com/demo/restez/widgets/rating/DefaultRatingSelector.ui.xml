@@ -2,19 +2,41 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui">
 	<ui:style>
-		
+		.starsList{
+			list-style-type: none;	
+		}
+		.starsList li{
+			margin: 5px;
+			float: left;	
+		}
+		.starsPanel{
+			outline: 0;
+			width: 10px; 
+		}
 	</ui:style>
 	<g:HTMLPanel>
 		<b:Row>
-			<b:Column size="1" offset="0">
-				<g:FocusPanel ui:field="star1Panel"><b:Icon type="STAR_EMPTY" iconSize="LARGE" ui:field="star1"/></g:FocusPanel>
-			</b:Column>
-			<b:Column size="1" offset="0">
-				<g:FocusPanel ui:field="star2Panel"><b:Icon type="STAR_EMPTY" iconSize="LARGE" ui:field="star2"/></g:FocusPanel>
-			</b:Column>
-			<b:Column size="1" offset="0">
-				<g:FocusPanel ui:field="star3Panel"><b:Icon type="STAR_EMPTY" iconSize="LARGE" ui:field="star3"/></g:FocusPanel>
-			</b:Column>						
+			<b:Column size="12">
+				<g:HTMLPanel>
+					<ul class="{style.starsList}">
+						<li>
+							<g:FocusPanel ui:field="star1Panel" styleName="{style.starsPanel}">
+								<b:Icon type="STAR_EMPTY" iconSize="LARGE" ui:field="star1"/>
+							</g:FocusPanel>
+						</li>
+						<li>
+							<g:FocusPanel ui:field="star2Panel" styleName="{style.starsPanel}">
+								<b:Icon type="STAR_EMPTY" iconSize="LARGE" ui:field="star2"/>
+							</g:FocusPanel>
+						</li>
+						<li>
+							<g:FocusPanel ui:field="star3Panel" styleName="{style.starsPanel}">
+								<b:Icon type="STAR_EMPTY" iconSize="LARGE" ui:field="star3"/>
+							</g:FocusPanel>				
+						</li>
+					</ul>
+				</g:HTMLPanel>					
+			</b:Column>				
 		</b:Row>
 	</g:HTMLPanel>
 </ui:UiBinder> 
