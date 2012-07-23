@@ -35,9 +35,9 @@ public interface RestaurantProxy extends ValueProxy
 	
 	public void setServiceQuality(ServiceQuality serviceQuality);
 	
-	public int getRating();
+	public Integer getRating();
 	
-	public void setRating(int rating);
+	public void setRating(Integer rating);
 	
 	public boolean getIsTakeAway();
 	

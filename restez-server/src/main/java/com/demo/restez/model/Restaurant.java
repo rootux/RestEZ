@@ -3,6 +3,7 @@ package com.demo.restez.model;
 import java.io.Serializable;
 
 import uk.co.jemos.podam.annotations.PodamIntValue;
+import uk.co.jemos.podam.annotations.PodamStringValue;
 
 import com.demo.restez.enums.*;
 
@@ -12,6 +13,7 @@ public class Restaurant implements Serializable
 
 	private String name;
 
+	@PodamStringValue(length=300)
 	private String desc;
 
 	private String address;
