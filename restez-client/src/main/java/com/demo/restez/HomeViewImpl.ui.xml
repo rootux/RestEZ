@@ -1,7 +1,25 @@
-<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:f="urn:import:com.demo.restez.widgets.filter">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:f="urn:import:com.demo.restez.widgets.filter"
+	xmlns:r="urn:import:com.demo.restez.restlist" xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui">
 
-  <g:HTMLPanel>
-    	<f:DefaultFilterWidget />
-  </g:HTMLPanel>
+	<g:HTMLPanel>
+
+		<gwtbootstrap:Row>
+			<gwtbootstrap:Column size="4">
+				<f:DefaultFilterWidget ui:field="restFilter" />
+			</gwtbootstrap:Column>
+			<gwtbootstrap:Column size="8">
+
+
+				<gwtbootstrap:Row>
+					<gwtbootstrap:Column size="12">
+						<r:DefaultResturantsList ui:field="restList" />
+					</gwtbootstrap:Column>
+				</gwtbootstrap:Row>
+
+
+			</gwtbootstrap:Column>
+		</gwtbootstrap:Row>
+	</g:HTMLPanel>
 </ui:UiBinder>
 

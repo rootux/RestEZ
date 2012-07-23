@@ -7,52 +7,43 @@
 	<g:HTMLPanel>
 		<gwtbootstrap:Row>
 			<gwtbootstrap:Column size="6">
-				<b:InlineLabel>Name</b:InlineLabel>
-			</gwtbootstrap:Column>
-			<gwtbootstrap:Column size="6">
 				<gwtbootstrap:TextBox ui:field="nameTextBox" placeholder="Name" />
 			</gwtbootstrap:Column>			
 		</gwtbootstrap:Row>
 		<gwtbootstrap:Row>
-			<gwtbootstrap:Column size="6">
-				<b:InlineLabel>Description</b:InlineLabel>
-			</gwtbootstrap:Column>
 			<gwtbootstrap:Column size="6">
 				<gwtbootstrap:TextBox ui:field="descTextBox" placeholder="Description" />
 			</gwtbootstrap:Column>			
 		</gwtbootstrap:Row>
 		<gwtbootstrap:Row>
 			<gwtbootstrap:Column size="6">
-				<b:InlineLabel>Address</b:InlineLabel>
-			</gwtbootstrap:Column>
-			<gwtbootstrap:Column size="6">
 				<gwtbootstrap:TextBox ui:field="addrTextBox" placeholder="Address" />
 			</gwtbootstrap:Column>			
 		</gwtbootstrap:Row>	
 		<gwtbootstrap:Row>
-			<gwtbootstrap:Column size="4">
+			<gwtbootstrap:Column size="2">
 				<gwtbootstrap:CheckBox ui:field="kosherCb" text="Kosher"/>
 			</gwtbootstrap:Column>
-			<gwtbootstrap:Column size="4">
+			<gwtbootstrap:Column size="2">
 				<gwtbootstrap:CheckBox ui:field="fancyCb" text="Fancy" />
 			</gwtbootstrap:Column>
-			<gwtbootstrap:Column size="4">
+			<gwtbootstrap:Column size="2">
 				<gwtbootstrap:CheckBox ui:field="takeAwayCb" text="Take Away"/>
 			</gwtbootstrap:Column>							
 		</gwtbootstrap:Row>
 		<gwtbootstrap:Row>
-			<gwtbootstrap:Column size="6">
+			<gwtbootstrap:Column size="3">
 				<b:InlineLabel>Average Price</b:InlineLabel>
 			</gwtbootstrap:Column>
-			<gwtbootstrap:Column size="6">
+			<gwtbootstrap:Column size="3">
 				<a:DefaultAveragePriceSelector ui:field="avgSelector"/>
 			</gwtbootstrap:Column>			
 		</gwtbootstrap:Row>
 		<gwtbootstrap:Row>
-			<gwtbootstrap:Column size="6">
+			<gwtbootstrap:Column size="3">
 				<b:InlineLabel>Average Price</b:InlineLabel>
 			</gwtbootstrap:Column>
-			<gwtbootstrap:Column size="6">
+			<gwtbootstrap:Column size="3">
 				<r:DefaultRatingSelector ui:field="ratingSelector"/>
 			</gwtbootstrap:Column>			
 		</gwtbootstrap:Row>										
