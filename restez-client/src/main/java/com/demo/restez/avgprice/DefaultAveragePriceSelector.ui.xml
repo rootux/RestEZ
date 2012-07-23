@@ -15,13 +15,13 @@
 				<g:HTMLPanel>
 					<ul class="{style.priceList}">
 						<li>
-							<gwtbootstrap:Button type="DANGER" text="1$" ui:field="lowBtn" />
+							<gwtbootstrap:Button type="DANGER" text="$" ui:field="lowBtn" />
 						</li>
 						<li>
-							<gwtbootstrap:Button type="WARNING" text="2$" ui:field="medBtn" />
+							<gwtbootstrap:Button type="WARNING" text="$$" ui:field="medBtn" />
 						</li>
 						<li>
-							<gwtbootstrap:Button type="SUCCESS" text="3$" ui:field="highBtn" />			
+							<gwtbootstrap:Button type="SUCCESS" text="$$$" ui:field="highBtn" />			
 						</li>
 					</ul>
 				</g:HTMLPanel>				

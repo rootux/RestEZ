@@ -19,13 +19,13 @@ public interface RestaurantProxy extends ValueProxy
 	
 	public void setAddress(String address);
 	
-	public boolean isKosher();
+	public boolean getIsKosher();
 	
-	public void setKosher(boolean isKosher);
+	public void setIsKosher(boolean isKosher);
 	
-	public boolean isFancy();
+	public boolean getIsFancy();
 	
-	public void setFancy(boolean isFancy);
+	public void setIsFancy(boolean isFancy);
 	
 	public PriceCategory getAvgPrice();
 	
@@ -39,7 +39,7 @@ public interface RestaurantProxy extends ValueProxy
 	
 	public void setRating(int rating);
 	
-	public boolean isTakeAway();
+	public boolean getIsTakeAway();
 	
-	public void setTakeAway(boolean isTakeAway);
+	public void setIsTakeAway(boolean isTakeAway);
 }

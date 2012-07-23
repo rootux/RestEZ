@@ -84,39 +84,25 @@ public class Restaurant implements Serializable
 
 
 	public void setAddress(String address)
-	{
-		this.address = address;
-	}
-
-
-
-	public boolean isKosher()
-	{
-		return isKosher;
-	}
-
-
-
-	public void setKosher(boolean isKosher)
-	{
-		this.isKosher = isKosher;
-	}
-
-
-
-	public boolean isFancy()
-	{
-		return isFancy;
-	}
-
-
-
-	public void setFancy(boolean isFancy)
-	{
-		this.isFancy = isFancy;
-	}
-
-
+    {
+    	this.address = address;
+    }
+	public boolean getIsKosher()
+    {
+    	return isKosher;
+    }
+	public void setIsKosher(boolean isKosher)
+    {
+    	this.isKosher = isKosher;
+    }
+	public boolean getIsFancy()
+    {
+    	return isFancy;
+    }
+	public void setIsFancy(boolean isFancy)
+    {
+    	this.isFancy = isFancy;
+    }
 
 	public PriceCategory getAvgPrice()
 	{
@@ -158,21 +144,14 @@ public class Restaurant implements Serializable
 		this.rating = rating;
 	}
 
-
-
-	public boolean isTakeAway()
-	{
-		return isTakeAway;
-	}
-
-
-
-	public void setTakeAway(boolean isTakeAway)
-	{
-		this.isTakeAway = isTakeAway;
-	}
-
-
+	public boolean getIsTakeAway()
+    {
+    	return isTakeAway;
+    }
+	public void setIsTakeAway(boolean isTakeAway)
+    {
+    	this.isTakeAway = isTakeAway;
+    }
 
 	@Override
 	public int hashCode()

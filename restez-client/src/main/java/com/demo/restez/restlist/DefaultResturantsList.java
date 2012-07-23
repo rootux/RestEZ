@@ -1,11 +1,7 @@
 package com.demo.restez.restlist;
 
-import com.demo.restez.enums.PriceCategory;
-import com.demo.restez.enums.ServiceQuality;
 import com.demo.restez.proxies.RestaurantProxy;
 import com.demo.restez.restlist.cell.resturantCell;
-import com.google.gwt.cell.client.Cell;
-import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -17,7 +13,6 @@ import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy.KeyboardSe
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.HasData;
-import com.google.gwt.view.client.ListDataProvider;
 
 public class DefaultResturantsList extends Composite implements ResturantsList
 {
